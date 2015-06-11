@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+<table>
+	<thead>
+		<tr>
+			<th>Animal</th>
+			<th>Related To</th>
+			<th>Friend Of</th>
+			<th>Picture</th>
+			<th>Edit?</th>
+			<th>Delete?</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% animals.forEach(function(animal){%>
+		<tr>
+			<td> <a href="/animals/<%= animal.id %>"><%= animal.type %></a></td>
+			<td><%= animal.relative %></td>
+			<td><%= animal.friend %></td>
+			<td><img height="100px" src="<%= animal.pic %>"></td>
+			<td><a href="/animals/<%= animal.id %>/edit">Edit</a></td>
+			<td>
+				<form action='/animals/<%= animal.id %>?_method=DELETE' method="POST"><input type="submit" value="X">
+        </form>
+			</td>
+		</tr>
+		<% }) %>
+	</tbody>
+</table>
+<a href="/animals/new"><button>Add An Animal</button></a>
+<% include ../partials/footer %>

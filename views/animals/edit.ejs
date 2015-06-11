@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+<form action="/animals/<%=animal.id%>?_method=PUT" method="POST">
+	<label for="">Animal:
+		<input type="text" name="animal[type]" value="<%= animal.type %>">
+	</label>
+	<label for="">Relatives:
+		<input type="text" name="animal[relative]" value="<%=animal.relative  %>">
+	</label>
+	<label for="">Friends:
+		<input type="text" name="animal[friend]" value="<%= animal.friend %>">
+	</label>
+	<label for="">Picture (URL please):
+		<input type="text" name="animal[pic]" value="<%= animal.pic %>">
+	</label>
+	<input type="submit" value="Edit animal">
+</form>
+<a href="/animals"><button>Return Home</button></a>
+<% include ../partials/footer %>

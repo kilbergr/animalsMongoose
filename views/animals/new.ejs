@@ -1,0 +1,19 @@
+<% include ../partials/header %>
+<h2>Add an Animal</h2>
+<form action="/animals" method="POST">
+	<label for="type">Animal:
+		<input type="text" name="animal[type]">
+	</label>
+	<label for="relative">Relatives:
+		<input type="text" name="animal[relative]">
+	</label>
+	<label for="friend">Friends:
+		<input type="text" name="animal[friend]">
+	</label>
+	<label for="pic">Picture (URL please)
+		<input type="text" name="animal[pic]">
+	</label>
+	<input type="submit" value="Add new animal">
+</form>
+<a href="/animals"><button>Return Home</button></a>
+<% include ../partials/footer %>
